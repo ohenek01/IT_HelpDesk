@@ -1,0 +1,61 @@
+.dashboard-container {
+    padding: 20px;
+    background-color: #f4f6f9;
+  }
+  
+  .dashboard-title {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .card-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  .dashboard-activity {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-activity h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .dashboard-activity ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dashboard-activity li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
