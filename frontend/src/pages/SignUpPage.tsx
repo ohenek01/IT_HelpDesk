@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "../styling/loginPage.css";
+import { useNavigate } from "react-router-dom";
+
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -24,8 +27,9 @@ const SignUpPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">SignUp</button>
+          <button type="submit" onClick={()=>{navigate("/Profile")}}>SignUp</button>
         </form>
+        <p>Already have an account... <b onClick={()=>{navigate("/LoginPage")}} style={{ cursor: "pointer" }}>Login</b></p>
       </div>
     </div>
   );

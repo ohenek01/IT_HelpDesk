@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import HelpDeskLanding from "./helpDeskLanding";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./homeComponents/Dashboard";
 import LiveChat from "./homeComponents/LiveChat";

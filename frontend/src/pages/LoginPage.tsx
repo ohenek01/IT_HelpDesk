@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "../styling/loginPage.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -26,6 +29,7 @@ const LoginPage = () => {
           />
           <button type="submit">Login</button>
         </form>
+        <p>Don't have an account...? <b onClick={()=>{navigate("/SignUpPage")}} style={{ cursor: "pointer" }}>SignUp</b></p>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "../styling/homePage.css";
 import { useNavigate } from "react-router-dom";
-
+import background from '../assets/background.jpg';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -17,11 +17,11 @@ const HomePage = () => {
           <li><Link to="/LiveChat">LiveChat</Link></li>
           <li><Link to="/Setting">Setting</Link></li>
         </ul>
-        <p onClick={() => navigate("/LoginPage")} style={{marginTop:50}}>Sign up</p> 
+        <button onClick={() => navigate("/LoginPage")} style={{marginTop:50}}>Sign up</button> 
       </nav>
 
       {/* Main Content */}
-      <div className="main-content">
+      <div className="main-content" style={{ backgroundImage: `url(${background})` }}>
         <Outlet />
       </div>
     </div>
