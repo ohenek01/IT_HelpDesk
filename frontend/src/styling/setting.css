@@ -1,0 +1,72 @@
+/* General container styling */
+.settings-container {
+    padding: 20px;
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+  }
+  
+  .settings-container.dark {
+    background-color: #333;
+    color: white;
+  }
+  
+  .settings-title {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .settings-section {
+    margin-bottom: 30px;
+  }
+  
+  .settings-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .setting-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .setting-item label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .setting-item input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .setting-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .settings-footer {
+    text-align: center;
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #45a049;
+  }
+  
