@@ -14,10 +14,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />}>
-          <Route path="Dashboard" element={<Dashboard />} />
-          <Route path="Ticket" element={<Ticket />} />
-          <Route path="LiveChat" element={<LiveChat />} />
-          <Route path="Setting" element={<Setting />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Ticket" element={<Ticket />} />
+          <Route path="/LiveChat" element={<LiveChat />} />
+          <Route path="/Setting" element={<Setting />} />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/SignUpPage" element={<SignUpPage />} />
           <Route path="/Profile" element={<ProfilePage />} />

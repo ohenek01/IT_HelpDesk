@@ -107,20 +107,39 @@ app.post("/tickets/:id/comments", authMiddleWare, async (req, res) => {
 
 app.post("/register", async(req, res) => {
     try{
-        const { username, email, password } = req.body;
+        const { email, password } = req.body;
 
         const userExist = await User.findOne({email});
         if(userExist){
-            return res.status(400).json({ error: 'User exists' });
+            return res.status(400).send({ status: 'Error', data: 'User exists' });
         }
         const hashPwd = await bcrypt.hash(password, 10);
 
         const newUser = new User({ username, email, password: hashPwd });
         await newUser.save();
 
-        res.status(201).json({ message: 'Registered successfully' });
+        res.status(201).send({ status: 'OK', data: 'Registered successfully' });
     }catch(error){
         res.status(500).json({ error: 'Server error' });
+    }
+});
+
+app.put('/profile', async (req, res) => {
+    const { email, firstName, lastName } = req.body;
+
+    try {
+        const updateUser = await User.findOneAndUpdate(
+            {email},
+            { firstName, lastName},
+            {new: true}
+        );
+        
+        if(!updateUser){
+            return res.status(404).send({ status: "Error", data: "User not found" });
+        }
+        res.status(200).send({status: 'Ok', data: updateUser})
+    } catch (error) {
+        res.status(500).send({status: "Error", data: "Error updating profile"})
     }
 });
 
@@ -130,7 +149,7 @@ app.post('/login', async(req, res) => {
 
         const user = await User.findOne({ email });
         if(!user){
-            return res.status(400).json({error: 'Invalide email'});
+            return res.status(400).json({error: 'Invalid email'});
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
@@ -140,6 +159,8 @@ app.post('/login', async(req, res) => {
 
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {expiresIn: '1h'});
         res.json({ token, userId: user._id, username: user.username });
+        if(res.status(200)){
+            return res.send({status: 'Ok', data: {token:token, role:userExists.role}})}
     }catch(error){
         res.status(500).json({ error: 'Server error' });
     }

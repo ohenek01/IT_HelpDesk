@@ -4,7 +4,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Hello .....</h1>
-      <p style={{marginBottom:50}}>Here's your help desk overview.</p>
+      <p style={{marginBottom:50, color: 'black'}}>Here's your help desk overview.</p>
 
       <div className="dashboard-cards">
         <div className="dashboard-activity">
@@ -25,7 +25,7 @@ const Dashboard = () => {
         <p>3. <b>Learn how to solve tickets effectively.</b></p>
       </div>
 
-      <h2 style={{marginTop:50}}>Quick Actions:</h2>
+      <h2 style={{marginTop:50, color: 'black'}}>Quick Actions:</h2>
       <button style={{background:'black'}}>New Ticket</button>
     </div>
   );
